@@ -19,17 +19,17 @@ extension URLSession {
     @discardableResult func dataTask<T: Decodable>(with url: URL, withTypedResponse response: @escaping (Result<T, APIServiceError>)->Void) -> URLSessionDataTask {
         return dataTask(with: url, usingResult: { result in
             switch result {
-            case .success(let (urlResponse, data)):
+            case .success(let (_, data)):
                 let decoder = JSONDecoder()
                 do {
                     let decodedTypeResponse = try decoder.decode(T.self, from: data)
                     response(.success(decodedTypeResponse))
                 } catch (let error) {
-                    response(.failure(.decodeError))
+                    response(.failure(.decodeError(error)))
                 }
                 break
             case .failure(let error):
-                response(.failure(.apiError))
+                response(.failure(.apiError(error)))
                 break
             }
         })
@@ -38,7 +38,7 @@ extension URLSession {
     @discardableResult func dataTask(with url: URL, usingResult result: @escaping (Result<(URLResponse, Data), APIServiceError>) -> Void) -> URLSessionDataTask {
         return dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error {
-                result(.failure(.apiError))
+                result(.failure(.apiError(error)))
                 return
             }
 
@@ -53,10 +53,10 @@ extension URLSession {
 }
 
 public enum APIServiceError: Error {
-    case apiError
+    case apiError(Error)
     case invalidEndpoint
     case invalidResponse
     case noData
-    case decodeError
+    case decodeError(Error)
     case invalidUrl
 }
