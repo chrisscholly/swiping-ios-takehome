@@ -18,19 +18,21 @@ extension URLSession {
 
     @discardableResult func dataTask<T: Decodable>(with url: URL, withTypedResponse response: @escaping (Result<T, APIServiceError>)->Void) -> URLSessionDataTask {
         return dataTask(with: url, usingResult: { result in
-            switch result {
-            case .success(let (_, data)):
-                let decoder = JSONDecoder()
-                do {
-                    let decodedTypeResponse = try decoder.decode(T.self, from: data)
-                    response(.success(decodedTypeResponse))
-                } catch (let error) {
-                    response(.failure(.decodeError(error)))
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let (_, data)):
+                    let decoder = JSONDecoder()
+                    do {
+                        let decodedTypeResponse = try decoder.decode(T.self, from: data)
+                        response(.success(decodedTypeResponse))
+                    } catch (let error) {
+                        response(.failure(.decodeError(error)))
+                    }
+                    break
+                case .failure(let error):
+                    response(.failure(.apiError(error)))
+                    break
                 }
-                break
-            case .failure(let error):
-                response(.failure(.apiError(error)))
-                break
             }
         })
     }

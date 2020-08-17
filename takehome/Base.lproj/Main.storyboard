@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -100,18 +101,129 @@
                                     <constraint firstAttribute="bottom" secondItem="mtf-rv-Aai" secondAttribute="bottom" id="zBN-oE-jUp"/>
                                 </constraints>
                             </view>
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tOm-dz-EAI" customClass="CardsCollectionView" customModule="takehome" customModuleProvider="target">
+                                <rect key="frame" x="18" y="132" width="339" height="513"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WBc-zO-zxK">
+                                    <size key="itemSize" width="339" height="512"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileCell" id="hlg-ky-WK8" customClass="ProfileCell" customModule="takehome" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="339" height="512"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FuK-BK-eyt">
+                                            <rect key="frame" x="0.0" y="0.0" width="339" height="512"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LzO-8t-NfP" customClass="DesignableView" customModule="takehome" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="339" height="507"/>
+                                                    <subviews>
+                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TzG-kx-DQG" customClass="DesignableView" customModule="takehome" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="339" height="507"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jessie, 21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaA-GJ-HDz">
+                                                                    <rect key="frame" x="18" y="426" width="303" height="44"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Santa Monica, USA " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjw-Js-hP4">
+                                                                    <rect key="frame" x="18" y="470" width="303" height="24"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cq0-cs-MiF">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="339" height="413"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="IaA-GJ-HDz" firstAttribute="top" secondItem="Cq0-cs-MiF" secondAttribute="bottom" constant="13" id="4eC-ui-0yc"/>
+                                                                <constraint firstAttribute="bottom" secondItem="cjw-Js-hP4" secondAttribute="bottom" constant="13" id="OS2-FF-5oI"/>
+                                                                <constraint firstItem="Cq0-cs-MiF" firstAttribute="top" secondItem="TzG-kx-DQG" secondAttribute="top" id="TF7-bV-A8X"/>
+                                                                <constraint firstItem="cjw-Js-hP4" firstAttribute="top" secondItem="IaA-GJ-HDz" secondAttribute="bottom" id="UBT-Pz-bIb"/>
+                                                                <constraint firstItem="cjw-Js-hP4" firstAttribute="trailing" secondItem="IaA-GJ-HDz" secondAttribute="trailing" id="apd-Id-ISW"/>
+                                                                <constraint firstItem="Cq0-cs-MiF" firstAttribute="leading" secondItem="TzG-kx-DQG" secondAttribute="leading" id="baB-J0-KaR"/>
+                                                                <constraint firstItem="cjw-Js-hP4" firstAttribute="leading" secondItem="IaA-GJ-HDz" secondAttribute="leading" id="guv-tv-gtN"/>
+                                                                <constraint firstItem="IaA-GJ-HDz" firstAttribute="leading" secondItem="TzG-kx-DQG" secondAttribute="leading" constant="18" id="jdv-bd-8gP"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Cq0-cs-MiF" secondAttribute="trailing" id="kYE-XA-nR6"/>
+                                                                <constraint firstAttribute="trailing" secondItem="IaA-GJ-HDz" secondAttribute="trailing" constant="18" id="xhh-KE-IRI"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="20"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="TzG-kx-DQG" secondAttribute="bottom" id="2eY-S2-kBt"/>
+                                                        <constraint firstItem="TzG-kx-DQG" firstAttribute="leading" secondItem="LzO-8t-NfP" secondAttribute="leading" id="Mar-ec-Tez"/>
+                                                        <constraint firstItem="TzG-kx-DQG" firstAttribute="top" secondItem="LzO-8t-NfP" secondAttribute="top" id="pxj-aT-R3f"/>
+                                                        <constraint firstAttribute="trailing" secondItem="TzG-kx-DQG" secondAttribute="trailing" id="qPo-ev-BIt"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                            <size key="value" width="0.0" height="13"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="0.10000000000000001"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="19"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="LzO-8t-NfP" secondAttribute="trailing" id="DQq-YJ-mf1"/>
+                                                <constraint firstItem="LzO-8t-NfP" firstAttribute="leading" secondItem="FuK-BK-eyt" secondAttribute="leading" id="anM-hv-Ta6"/>
+                                                <constraint firstItem="LzO-8t-NfP" firstAttribute="top" secondItem="FuK-BK-eyt" secondAttribute="top" id="hhc-tp-Gqk"/>
+                                                <constraint firstAttribute="bottom" secondItem="LzO-8t-NfP" secondAttribute="bottom" constant="5" id="sCo-FK-lf9"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="339" height="512"/>
+                                        <connections>
+                                            <outlet property="profileImageView" destination="Cq0-cs-MiF" id="LBI-M0-Cex"/>
+                                            <outlet property="profileSubtitle" destination="cjw-Js-hP4" id="ZyR-dP-wNJ"/>
+                                            <outlet property="profileTitle" destination="IaA-GJ-HDz" id="dVU-EZ-8K0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8UO-es-xVx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5Xj-SD-Kre"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rHy-tU-ktC" secondAttribute="bottom" constant="20" id="93H-Ga-SuM"/>
                             <constraint firstItem="rHy-tU-ktC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="97d-hh-x9d"/>
+                            <constraint firstItem="tOm-dz-EAI" firstAttribute="top" secondItem="8UO-es-xVx" secondAttribute="bottom" constant="24" id="HHf-ZD-ggp"/>
+                            <constraint firstItem="tOm-dz-EAI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="18" id="N8l-NQ-LDa"/>
+                            <constraint firstAttribute="trailing" secondItem="tOm-dz-EAI" secondAttribute="trailing" constant="18" id="fKy-0e-Ood"/>
+                            <constraint firstItem="rHy-tU-ktC" firstAttribute="top" secondItem="tOm-dz-EAI" secondAttribute="bottom" constant="44" id="gTu-h3-oaO"/>
                             <constraint firstItem="8UO-es-xVx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gdM-vS-C8i"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rHy-tU-ktC" secondAttribute="trailing" id="p8n-IV-6G4"/>
                             <constraint firstItem="8UO-es-xVx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tmJ-mj-QQO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="tOm-dz-EAI" id="Yjl-7U-O56"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

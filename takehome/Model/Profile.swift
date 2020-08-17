@@ -29,7 +29,12 @@ struct Profile: Codable {
     }
 }
 
+extension Profile {
+    var address: String {
+        [city, country].joined(separator: ", ")
+    }
+}
+
 struct Profiles: Codable {
     let profiles: [Profile]
 }
-
