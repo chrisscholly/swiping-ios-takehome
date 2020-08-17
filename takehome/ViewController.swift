@@ -10,10 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet private weak var collectionView: CardsCollectionView!
+    @IBOutlet private weak var matchesCountLabel: UILabel!
 
     var profiles: [Profile] = []
+    var matchesCount = 0 {
+        didSet {
+            updateMatchesCountLabel()
+        }
+    }
 
     @IBAction func didTapAcceptButton() {
+        matchesCount += 1
         collectionView.goToNextCard()
     }
 
@@ -26,6 +33,7 @@ extension ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupMatchesCountLabel()
         setupCollectionView()
         loadProfiles()
     }
@@ -52,6 +60,10 @@ extension ViewController: UICollectionViewDataSource {
 }
 
 private extension ViewController {
+    func setupMatchesCountLabel() {
+        updateMatchesCountLabel()
+    }
+
     func setupCollectionView() {
         collectionView.cardSize = collectionView.bounds.size
         collectionView.dataSource = self
@@ -68,5 +80,9 @@ private extension ViewController {
                 print("Error: \(error)")
             }
         }
+    }
+
+    func updateMatchesCountLabel() {
+        matchesCountLabel.text = "\(matchesCount)"
     }
 }

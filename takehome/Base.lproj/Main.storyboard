@@ -229,6 +229,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="tOm-dz-EAI" id="Yjl-7U-O56"/>
+                        <outlet property="matchesCountLabel" destination="1UN-1Z-XAV" id="ihd-gs-GJg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
