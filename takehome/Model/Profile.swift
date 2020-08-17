@@ -31,7 +31,12 @@ struct Profile: Codable {
 
 extension Profile {
     var address: String {
-        [city, country].joined(separator: ", ")
+        [city, countryWithFlag].joined(separator: ", ")
+    }
+
+    var countryWithFlag: String {
+        guard country.lowercased().trimmed == "usa" else { return country }
+        return "\(country) 🇺🇸"
     }
 }
 

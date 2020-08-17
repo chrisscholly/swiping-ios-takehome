@@ -28,6 +28,7 @@
 		505F7E4F24EACD06008187C9 /* NibReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F7E4E24EACD06008187C9 /* NibReusable.swift */; };
 		505F7E5124EACD1B008187C9 /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F7E5024EACD1B008187C9 /* CellConfigurable.swift */; };
 		505F7E5324EAD649008187C9 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F7E5224EAD649008187C9 /* UIImageView+URL.swift */; };
+		505F7E5524EADF9D008187C9 /* String+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F7E5424EADF9D008187C9 /* String+Trim.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		505F7E4E24EACD06008187C9 /* NibReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibReusable.swift; sourceTree = "<group>"; };
 		505F7E5024EACD1B008187C9 /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
 		505F7E5224EAD649008187C9 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
+		505F7E5424EADF9D008187C9 /* String+Trim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Trim.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				505F7E3B24EAB1C9008187C9 /* UIView+IBInspectable.swift */,
 				505F7E4924EACCBB008187C9 /* UICollectionView+Reusable.swift */,
 				505F7E5224EAD649008187C9 /* UIImageView+URL.swift */,
+				505F7E5424EADF9D008187C9 /* String+Trim.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				505F7E5324EAD649008187C9 /* UIImageView+URL.swift in Sources */,
 				505F7E3C24EAB1C9008187C9 /* UIView+IBInspectable.swift in Sources */,
 				505F7E5124EACD1B008187C9 /* CellConfigurable.swift in Sources */,
+				505F7E5524EADF9D008187C9 /* String+Trim.swift in Sources */,
 				22A287332490990E00ABD460 /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
