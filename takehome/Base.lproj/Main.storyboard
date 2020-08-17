@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="64"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brand-logo" translatesAutoresizingMaskIntoConstraints="NO" id="c3V-0h-k63">
-                                        <rect key="frame" x="137.66666666666666" y="19" width="100" height="26"/>
+                                        <rect key="frame" x="137.66666666666666" y="18.666666666666664" width="100" height="27"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0J-ED-50o">
                                         <rect key="frame" x="0.0" y="9" width="48" height="46"/>
@@ -58,11 +58,56 @@
                                     <constraint firstItem="xke-RG-9Qq" firstAttribute="centerY" secondItem="8UO-es-xVx" secondAttribute="centerY" id="xeM-RJ-hJr"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHy-tU-ktC">
+                                <rect key="frame" x="0.0" y="689" width="375" height="69"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtf-rv-Aai">
+                                        <rect key="frame" x="84" y="0.0" width="207" height="69"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXk-Yc-LCf" customClass="CircleButton" customModule="takehome" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
+                                                <color key="backgroundColor" name="primary"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="69" id="fwp-7G-6kJ"/>
+                                                    <constraint firstAttribute="height" constant="69" id="pBr-px-gh2"/>
+                                                </constraints>
+                                                <state key="normal" image="close"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGd-Lb-Y94" customClass="CircleButton" customModule="takehome" customModuleProvider="target">
+                                                <rect key="frame" x="138" y="0.0" width="69" height="69"/>
+                                                <color key="backgroundColor" name="success"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="69" id="Opd-3u-P3C"/>
+                                                    <constraint firstAttribute="width" constant="69" id="wlh-6O-ogx"/>
+                                                </constraints>
+                                                <state key="normal" image="checkmark"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="lGd-Lb-Y94" firstAttribute="leading" secondItem="fXk-Yc-LCf" secondAttribute="trailing" constant="69" id="LT1-xM-PY0"/>
+                                            <constraint firstItem="fXk-Yc-LCf" firstAttribute="top" secondItem="mtf-rv-Aai" secondAttribute="top" id="LaL-EZ-lu4"/>
+                                            <constraint firstItem="lGd-Lb-Y94" firstAttribute="top" secondItem="mtf-rv-Aai" secondAttribute="top" id="RVa-ND-2cv"/>
+                                            <constraint firstAttribute="trailing" secondItem="lGd-Lb-Y94" secondAttribute="trailing" id="TLQ-YR-Gw9"/>
+                                            <constraint firstItem="fXk-Yc-LCf" firstAttribute="leading" secondItem="mtf-rv-Aai" secondAttribute="leading" id="a01-K8-dpS"/>
+                                            <constraint firstAttribute="bottom" secondItem="fXk-Yc-LCf" secondAttribute="bottom" id="byH-nL-EHd"/>
+                                            <constraint firstAttribute="bottom" secondItem="lGd-Lb-Y94" secondAttribute="bottom" id="lAa-CG-d9f"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mtf-rv-Aai" firstAttribute="top" secondItem="rHy-tU-ktC" secondAttribute="top" id="Dte-gX-um0"/>
+                                    <constraint firstItem="mtf-rv-Aai" firstAttribute="centerX" secondItem="rHy-tU-ktC" secondAttribute="centerX" id="llA-Xt-SSJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="mtf-rv-Aai" secondAttribute="bottom" id="zBN-oE-jUp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="8UO-es-xVx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5Xj-SD-Kre"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rHy-tU-ktC" secondAttribute="bottom" constant="20" id="93H-Ga-SuM"/>
+                            <constraint firstItem="rHy-tU-ktC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="97d-hh-x9d"/>
                             <constraint firstItem="8UO-es-xVx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gdM-vS-C8i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rHy-tU-ktC" secondAttribute="trailing" id="p8n-IV-6G4"/>
                             <constraint firstItem="8UO-es-xVx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tmJ-mj-QQO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -75,9 +120,14 @@
     </scenes>
     <resources>
         <image name="brand-logo" width="100" height="27"/>
+        <image name="checkmark" width="22" height="22"/>
+        <image name="close" width="33" height="33"/>
         <image name="settings" width="20" height="22"/>
         <namedColor name="primary">
             <color red="0.99607843137254903" green="0.23529411764705882" blue="0.44705882352941179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="success">
+            <color red="0.29803921568627451" green="0.85098039215686272" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
