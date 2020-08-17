@@ -13,30 +13,21 @@ class ViewController: UIViewController {
 
     var profiles: [Profile] = []
 
+    @IBAction func didTapAcceptButton() {
+        collectionView.goToNextCard()
+    }
+
+    @IBAction func didTapDeclineButton() {
+        collectionView.goToPreviousCard()
+    }
+}
+
+extension ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupCollectionView()
         loadProfiles()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        collectionView.cardSize = collectionView.bounds.size
-    }
-
-    private func loadProfiles() {
-        ProfileService.getProfiles { result in
-            switch result {
-            case .success(let profiles):
-                self.profiles = profiles.profiles
-                self.collectionView.reloadData()
-            case .failure(let error):
-                // TODO: Handle error
-                print("Error: \(error)")
-            }
-        }
     }
 }
 
@@ -62,6 +53,20 @@ extension ViewController: UICollectionViewDataSource {
 
 private extension ViewController {
     func setupCollectionView() {
+        collectionView.cardSize = collectionView.bounds.size
         collectionView.dataSource = self
+    }
+
+    func loadProfiles() {
+        ProfileService.getProfiles { result in
+            switch result {
+            case .success(let profiles):
+                self.profiles = profiles.profiles
+                self.collectionView.reloadData()
+            case .failure(let error):
+                // TODO: Handle error
+                print("Error: \(error)")
+            }
+        }
     }
 }
